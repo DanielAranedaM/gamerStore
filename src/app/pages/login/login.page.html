@@ -1,24 +1,25 @@
 
 <ion-content>
-    
-    <form [formGroup]="form">
+   <div class="container">
+        <form [formGroup]="form">
 
-        <app-custom-input
-        [imagePath]="'assets/imagen/Logo.png'">
-        </app-custom-input>
-    
-        <app-custom-input icon="mail-outline"
-        autocomplete="email"
-        [control]="form.controls.email"
-        type="email"
-        label="Email"></app-custom-input>
+            <img src="assets/imagen/Logo.png" style="text-align: center;">
 
-        <app-custom-input icon="key-outline"
-        [control]="form.controls.contrasena"
-        type="password"
-        label="Contraseña"></app-custom-input>
+            <app-custom-input icon="mail-outline"
+            autocomplete="email"
+            [control]="form.controls.email"
+            type="email"
+            label="Email"></app-custom-input>
 
+            <div class="validacion" **ngIf="fomr.controls.contrasena.erros">
 
-    </form>
+                <app-custom-input icon="key-outline"
+                [control]="form.controls.contrasena"
+                type="password"
+                label="Contraseña"></app-custom-input>
+            </div>
+
+        </form>
+    </div> 
 
 </ion-content>

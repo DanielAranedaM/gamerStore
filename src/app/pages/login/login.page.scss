@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: black; /* Fondo negro */
+}
+
+.form {
+    width: 300px; /* Ancho del formulario */
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #1f1f1f; /* Color de fondo del formulario */
+}
+
+.logo {
+    display: block;
+    margin: 0 auto;
+    width: 100px; /* Ancho de la imagen del logo */
+    margin-bottom: 20px;
+}
