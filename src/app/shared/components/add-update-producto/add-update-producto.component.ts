@@ -27,7 +27,7 @@ export class AddUpdateProductoComponent  implements OnInit {
     user = {} as User;
 
   ngOnInit() {
-    this.user
+    this.user = this.utilSvc.getFromLocalStorage('user');
   }
 
     async tomarImagen(){
@@ -42,11 +42,42 @@ export class AddUpdateProductoComponent  implements OnInit {
   async subir(){
     if(this.form.valid){
 
-      let path = `users/${this.user.uid}`
+      let path = `users/${this.user.uid}/productos`
 
       const cargando = await this.utilSvc.cargando();
       await cargando.present();
 
+      //subir imagen
+      let dataUrl = this.form.value.imagen;
+      let imagenPath = `${this.user.uid}/${Date.now()}`;
+      let imagenUrl = await this.firebaseSvc.subirImagen(imagenPath, dataUrl);
+      this.form.controls.imagen.setValue(imagenUrl);
+
+      delete this.form.value.id;
+
+      this.firebaseSvc.addItem(path, this.form.value).then(async res =>{
+
+        this.utilSvc.cerrarModal({success:true});
+
+        this.utilSvc.presentarToast({
+          message: 'Producto creado correctamente :D!!',
+          duration: 1000,
+          color: 'success',
+          position: 'middle',
+          icon: 'checkmark-circle-outline'
+        })
+
+      }).catch(error => {
+        console.log(error);
+        
+        this.utilSvc.presentarToast({
+          message: error.mesage,
+          duration: 2500,
+          color: 'primary',
+          position: 'middle',
+          icon: 'alert-circle-outline'
+        })
+      })
     
     }
   }
