@@ -1,3 +1,14 @@
-<p>
-  add-update-producto works!
-</p>
+<ion-header [translucent]="true">
+  <ion-buttons>
+    <ion-button (click)="cerrarModal()">X</ion-button>
+  </ion-buttons>
+    <ion-title>Agrega un producto!!!</ion-title>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="form" class="auth-form" (ngSubmit)="subir()" (keypress)="subir()">
+
+    
+
+  </form>
+</ion-content>
