@@ -8,14 +8,15 @@
       <ion-col size-md="6" size-lg="4" size-xs="12">
         <form #loginForm="ngForm">
           <ion-list class="login-form">
-            <ion-item>
-              <ion-label position="floating" class="login-label">Correo</ion-label>
-              <ion-input type="email" name="username" ngModel required class="login-input"></ion-input>
+            
+            <ion-item lines="none">
+              <ion-icon slot="start" color="primary" icon="mail-outline"></ion-icon>
+              <ion-input  type="text" placeholder="Email" required></ion-input>
             </ion-item>
 
             <ion-item>
-              <ion-label position="floating" class="login-label">Contraseña</ion-label>
-              <ion-input type="password" name="password" ngModel required class="login-input"></ion-input>
+              <ion-icon slot="start" color="primary" icon="key-outline"></ion-icon>
+              <ion-input type="password" placeholder="Contraseña"></ion-input>
             </ion-item>
           </ion-list>
 
@@ -35,15 +36,6 @@
           </ion-card-header>
       
           <ion-card-content>
-            <ion-item>
-              <ion-label position="floating">Email</ion-label>
-              <ion-input type="text" name="username" required></ion-input>
-            </ion-item>
-      
-            <ion-item>
-              <ion-label position="floating">Contraseña</ion-label>
-              <ion-input type="password"  name="password" required></ion-input>
-            </ion-item>
       
             <ion-button expand="block"  fill="clear" class="ion-margin-top">
               ¿Olvidaste tu contraseña?
