@@ -22,8 +22,7 @@ export class UtilsService{
             quality: 90,
             allowEditing: true,
             resultType: CameraResultType.DataUrl,
-            source: CameraSource.Prompt,
-            promptLabelHeader,
+            source: CameraSource. Prompt, promptLabelHeader,
             promptLabelPhoto: 'Selecciona imagen',
             promptLabelPicture: 'Tomar foto'
         });

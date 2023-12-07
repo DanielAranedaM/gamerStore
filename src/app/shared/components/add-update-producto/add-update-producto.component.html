@@ -8,6 +8,9 @@
 <ion-content>
   <form [formGroup]="form" class="ion-padding ion-text-center" (ngSubmit)="subir()" (keypress)="subir()">
 
+    <ion-avatar *ngIf="form.value.imagen">
+      <img [src]="form.value.imagen">
+    </ion-avatar>
     <!--Imagen-->
     <ion-button (click)="tomarImagen()" expand="block" fill="clear" shape="round">
       Clickea para tomar una imagen!!
@@ -54,9 +57,6 @@
      <div class="validators" *ngIf="form.controls.unidadesVendidas.errors && form.controls.unidadesVendidas.touched">
       <div *ngIf="form.controls.unidadesVendidas.errors?.['required']">
         Debe colocar unidades Vendidas
-      </div>
-      <div *ngIf="form.controls.unidadesVendidas.errors?.['min']">
-        El unidades Vendidas por lo menos debe ser 0
       </div>
      </div>
 
