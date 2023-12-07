@@ -54,14 +54,14 @@
      type="number"
      label="unidadesVendidas"></app-custom-input>
 
-     <div class="validators" *ngIf="form.controls.unidadesVendidas.errors && form.controls.unidadesVendidas.touched">
+     <div class="validators" *ngIf="form.controls.unidadesVendidas.errors">
       <div *ngIf="form.controls.unidadesVendidas.errors?.['required']">
         Debe colocar unidades Vendidas
       </div>
      </div>
 
      
-     <ion-button mode="android" class="ion-margin" type="submit" [disabled]="form.valid">
+     <ion-button mode="android" class="ion-margin" type="submit" (click)="subir()">
       Agregar item
 
      </ion-button>

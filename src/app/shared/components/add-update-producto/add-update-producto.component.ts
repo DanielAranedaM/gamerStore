@@ -16,7 +16,7 @@ export class AddUpdateProductoComponent  implements OnInit {
     nombre: new FormControl('', [Validators.required, Validators.minLength(4)]),
     imagen: new FormControl('', [Validators.required]),
     precio: new FormControl('', [Validators.required, Validators.min(0)]),
-    unidadesVendidas: new FormControl('', [Validators.required, Validators.min(0)]),
+    unidadesVendidas: new FormControl('', [Validators.required]),
   })
 
   constructor(
