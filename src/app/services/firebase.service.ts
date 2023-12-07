@@ -4,6 +4,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth'
 import { getFirestore, setDoc, doc, getDoc, addDoc, collection } from '@angular/fire/firestore'
 import { AngularFireStorage } from '@angular/fire/compat/storage';
 import { getStorage, uploadString, ref, getDownloadURL } from '@angular/fire/storage';
+import { User } from '../models/user.mode';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,7 @@ export class FirebaseService {
   //**Auteticación */
 
   //**Funcion Acceder */
-  singIn(){
+  singIn(user: User){
     return 
   }
 

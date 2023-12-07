@@ -31,7 +31,7 @@
             <p routerLink="recuperar-password" style="color: aliceblue;">¿Olvidaste tu Contraseña?</p>
 
             <!--Ingresar cuando el formulario sea valido-->
-            <ion-button expand="block" mode="ios" class="submit" type="submit" [disabled]="form.invalid">
+            <ion-button expand="block" mode="ios" class="submit" type="submit" [disabled]="form.invalid" [routerLink]="['/home']">
                 Ingresar
                 <ion-icon slot="end" name="play"></ion-icon>
             </ion-button>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UtilsService } from 'src/app/services/util.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { FirebaseService } from 'src/app/services/firebase.service';
+import { User } from 'src/app/models/user.mode';
 
 @Component({
   selector: 'app-add-update-producto',
@@ -41,7 +42,7 @@ export class AddUpdateProductoComponent  implements OnInit {
   async subir(){
     if(this.form.valid){
 
-      let path = `users/${this.}`
+      let path = `users/${this.user.uid}`
 
       const cargando = await this.utilSvc.cargando();
       await cargando.present();
