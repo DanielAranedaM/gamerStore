@@ -1,0 +1,7 @@
+{
+  "name": "APPdos",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
