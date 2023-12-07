@@ -1,0 +1,65 @@
+<ion-content class="login-content">
+
+  <div class="image-container">
+    <img src="assets/imagen/Logo.png" alt="Imagen Gamer" class="gamer-image">
+  </div> 
+  <ion-grid class="ion-justify-content-center ion-align-items-center">
+    <ion-row>
+      <ion-col size-md="6" size-lg="4" size-xs="12">
+        <form (ngSubmit)="loginUser()" #loginForm="ngForm">
+          <ion-list class="login-form">
+            <ion-item>
+              <ion-label position="floating" class="login-label">Nombre de usuario</ion-label>
+              <ion-input type="text" name="username" ngModel required class="login-input"></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="floating" class="login-label">Contraseña</ion-label>
+              <ion-input type="password" name="password" ngModel required class="login-input"></ion-input>
+            </ion-item>
+          </ion-list>
+
+          <div class="ion-text-center">
+            <ion-button expand="block" type="submit" [disabled]="!loginForm.form.valid" class="login-button">Iniciar sesión</ion-button>
+          </div>
+
+          <div class="ion-text-center">
+            <ion-button expand="block" fill="clear" class="login-link" (click)="recoverPassword()">Recuperar contraseña</ion-button>
+            <ion-button expand="block" fill="clear" class="login-link" (click)="register()">Registrarse</ion-button>
+          </div>
+        </form>
+      </ion-col><ion-content class="ion-padding">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Iniciar sesión</ion-card-title>
+          </ion-card-header>
+      
+          <ion-card-content>
+            <ion-item>
+              <ion-label position="floating">Usuario</ion-label>
+              <ion-input type="text" [(ngModel)]="username" name="username" required></ion-input>
+            </ion-item>
+      
+            <ion-item>
+              <ion-label position="floating">Contraseña</ion-label>
+              <ion-input type="password" [(ngModel)]="password" name="password" required></ion-input>
+            </ion-item>
+      
+            <ion-button expand="block" (click)="forgotPassword()" fill="clear" class="ion-margin-top">
+              ¿Olvidaste tu contraseña?
+            </ion-button>
+      
+            <ion-button expand="block" (click)="register()" fill="clear" class="ion-margin-top">
+              Registrarse
+            </ion-button>
+      
+            <ion-button expand="block" (click)="login()" class="ion-margin-top">
+              Ingresar
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-content>
+      
+    </ion-row>
+  </ion-grid>
+</ion-content>

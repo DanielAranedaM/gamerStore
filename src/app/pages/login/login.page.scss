@@ -1,0 +1,45 @@
+.login-content {
+    --ion-background-color: #000;
+    --ion-text-color: #fff;
+  }
+
+  .image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px; /* Ajusta la altura de la imagen según sea necesario */
+    margin-bottom: 20px; /* Espacio entre la imagen y el formulario */
+  }
+  
+  .gamer-image {
+    max-width: 70%;
+    max-height: 70%;
+    /* Ajusta el tamaño máximo de la imagen para que no exceda su contenedor */
+  }
+  
+  .login-form {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .login-label {
+    color: #ffea00 !important;
+  }
+  
+  .login-input {
+    color: #fff !important;
+    --ion-color-base: #ffea00 !important;
+  }
+  
+  .login-button {
+    --background: #ffea00 !important;
+    --border-color: #ffea00 !important;
+    --color: #000 !important;
+    margin-top: 20px;
+  }
+  
+  .login-button:hover {
+    --background: #fff !important;
+    --color: #000 !important;
+  }
