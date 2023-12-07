@@ -1,13 +1,49 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>registro</ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">registro</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <div class="container">
+       <form [formGroup]="form" (ngSubmit)="submit()">
+
+           <img src="assets/imagen/Logo.png" style="text-align: center;">
+
+           <app-custom-input icon="person"
+           autocomplete="name"
+           [control]="form.controls.name"
+           type="text"
+           label="Nombre"></app-custom-input>
+
+           <!--Validaciones de error al ingresar Nombre-->
+           <div class="validacion" *ngIf="form.controls.name.errors && form.controls.name.touched">
+               <div *ngIf="form.controls.name.errors?.['required']">Indique Nombre</div>
+               <div *ngIf="form.controls.name.errors?.['minlenght']">Ingrese Nombre Valido</div>
+           </div>
+
+           <app-custom-input icon="mail-outline"
+           autocomplete="email"
+           [control]="form.controls.email"
+           type="email"
+           label="Email"></app-custom-input>
+
+           <!--Validaciones de error al ingresar correo-->
+           <div class="validacion" *ngIf="form.controls.email.errors && form.controls.email.touched">
+               <div *ngIf="form.controls.email.errors?.['required']">Indique Correo</div>
+               <div *ngIf="form.controls.email.errors?.['email']">Ingrese Correo Valido</div>
+           </div>
+
+           <app-custom-input icon="key-outline"
+           [control]="form.controls.contrasena"
+           type="password"
+           label="Contraseña"></app-custom-input>
+           
+           <!--Validaciones de error al ingresar contraseña-->
+           <div class="validacion" *ngIf="form.controls.contrasena.errors && form.controls.contrasena.touched">
+               <div *ngIf="form.controls.contrasena.errors?.['required']">Ingrese Contraseña</div>
+           </div>
+           <!--Ingresar cuando el formulario sea valido-->
+           <ion-button expand="block" mode="ios" class="submit" type="submit" [disabled]="form.invalid" [routerLink]="['/home']">
+            Registrate
+            <ion-icon slot="end" name="person-add"></ion-icon>
+           </ion-button>
+       </form>
+   </div> 
+
 </ion-content>

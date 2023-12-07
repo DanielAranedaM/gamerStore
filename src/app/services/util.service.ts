@@ -16,6 +16,8 @@ export class UtilsService{
         private router:Router
     ){}
 
+    
+
     //Camara
     async takePic (promptLabelHeader:string) {
         return await Camera.getPhoto({

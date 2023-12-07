@@ -5,6 +5,7 @@ import { getFirestore, setDoc, doc, getDoc, addDoc, collection } from '@angular/
 import { AngularFireStorage } from '@angular/fire/compat/storage';
 import { getStorage, uploadString, ref, getDownloadURL } from '@angular/fire/storage';
 import { User } from '../models/user.mode';
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, updateProfile } from 'firebase/auth'
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +19,18 @@ export class FirebaseService {
 
   //**Funcion Acceder */
   singIn(user: User){
-    return 
+    return signInWithEmailAndPassword(getAuth(), user.email, user.password)
+  }
+  
+  //**Funcion crear usuario */
+  singUp(user: User){
+    return createUserWithEmailAndPassword(getAuth(), user.email, user.password)
+  }
+
+  
+  //**Actualizar usuario */
+  updateUser(displayName: string){
+    return updateProfile(getAuth().currentUser, {displayName})
   }
 
   //Poner user para guardar los datos
