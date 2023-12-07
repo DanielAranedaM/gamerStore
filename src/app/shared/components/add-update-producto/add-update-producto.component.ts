@@ -23,7 +23,16 @@ export class AddUpdateProductoComponent  implements OnInit {
     private firebaseSvc:FirebaseService
   ) { }
 
-  ngOnInit() {}
+    user = {} as User;
+
+  ngOnInit() {
+    this.user
+  }
+
+    async tomarImagen(){
+      const dataUrl = (await this.utilSvc.takePic('Imagen producto')).dataUrl;
+      this.form.controls.imagen.setValue(dataUrl);
+    }
 
   cerrarModal(){
     this.utilSvc.cerrarModal();
@@ -32,11 +41,12 @@ export class AddUpdateProductoComponent  implements OnInit {
   async subir(){
     if(this.form.valid){
 
+      let path = `users/${this.}`
+
       const cargando = await this.utilSvc.cargando();
       await cargando.present();
 
-      
-
+    
     }
   }
 
