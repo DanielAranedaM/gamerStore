@@ -8,10 +8,13 @@ import { RuleTester } from 'eslint';
 })
 export class UtilsService{
 
-    ctrlLoading = Inject(LoadingController);
-    ctrlToast = Inject(ToastController);
-    ctrlModal = Inject(ModalController);
-    router = Inject(Router);
+    constructor(
+        private ctrlLoading:LoadingController,
+        private ctrlToast:ToastController,
+        private ctrlModal:ModalController,
+        private router:Router
+    ){}
+
 
     //Simbolo de carga
     cargando(){
@@ -44,7 +47,7 @@ export class UtilsService{
         const modal = await this.ctrlModal.create(opts);
         await modal.present();
 
-        const { data } = await modal.await.onWillDismiss();
+        const { data } = await modal.onWillDismiss();
 
         if(data){
             return data;

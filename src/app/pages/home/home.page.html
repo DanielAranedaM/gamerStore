@@ -1,12 +1,12 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Inicio, Bienvenido al cataloge</ion-title>
+    <ion-title>Bienvenido al catalogo</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button>
+    <ion-fab-button (click)="actualizarProducto()">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
