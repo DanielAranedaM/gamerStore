@@ -2,6 +2,7 @@ import { Injectable, Inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoadingController, ModalController, ModalOptions, ToastController, ToastOptions } from '@ionic/angular';
 import { RuleTester } from 'eslint';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 
 @Injectable({
     providedIn: 'root'
@@ -15,6 +16,18 @@ export class UtilsService{
         private router:Router
     ){}
 
+    //Camara
+    async takePic (promptLabelHeader:string) {
+        return await Camera.getPhoto({
+            quality: 90,
+            allowEditing: true,
+            resultType: CameraResultType.DataUrl,
+            source: CameraSource.Prompt,
+            promptLabelHeader,
+            promptLabelPhoto: 'Selecciona imagen',
+            promptLabelPicture: 'Tomar foto'
+        });
+    };
 
     //Simbolo de carga
     cargando(){
@@ -55,6 +68,7 @@ export class UtilsService{
 
     }
 
+    //Cerrar modal
     cerrarModal(data?:any){
         return this.ctrlModal.dismiss(data);
     }
